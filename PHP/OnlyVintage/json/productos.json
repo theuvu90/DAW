@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Sudadera Indominus Gris",
+        "image": "../resources/images/sudadera_gris.png",
+        "extraInfo": "Sudadera con capucha Indominus Tex color Gris",
+        "price": 30
+    },
+    {
+        "id": 2,
+        "name": "Sudadera Indominus Negra",
+        "image": "../resources/images/sudadera_negra.png",
+        "extraInfo": "Sudadera con capucha Indominus Tex color Negra",
+        "price": 24.99
+    },
+    {
+        "id": 3,
+        "name": "Sudadera Indominus Verde",
+        "image": "../resources/images/sudadera_verde.png",
+        "extraInfo": "Sudadera con capucha Indominus Tex color Verde",
+        "price": 49.99
+    },
+    {
+        "id": 4,
+        "name": "Sudadera Indominus Roja",
+        "image": "../resources/images/sudadera_roja.png",
+        "extraInfo": "Sudadera con capucha Indominus Tex color Roja",
+        "price": 30
+    },
+    {
+        "id": 5,
+        "name": "Sudadera Indominus Azul",
+        "image": "../resources/images/sudadera_azul.png",
+        "extraInfo": "Sudadera con capucha Indominus Tex color Azul",
+        "price": 35.95
+    },
+    {
+        "id": 6,
+        "name": "Sudadera Indominus Verde Oscuro",
+        "image": "../resources/images/sudadera_verde_oscuro.png",
+        "extraInfo": "Sudadera con capucha Indominus Tex color Verde Oscuro",
+        "price": 40
+    }
+]
