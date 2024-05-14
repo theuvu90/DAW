@@ -10,7 +10,7 @@ $collection = $database->my_collection;
 $usuario = "root";
 $password = "";
 $servidor = "localhost";
-$basededatos = "registro";
+$basededatos = "registro1";
 
 $conexion = mysqli_connect($servidor, $usuario, $password) or die("Error conexión con el servidor de la base de datos");
 $db = mysqli_select_db($conexion, $basededatos) or die("Error conexión al conectarse a la base de datos");
@@ -21,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $telefono = $_POST['telefono'];
     $mail = $_POST['mail'];
     $direccion = $_POST['direccion'];
-    $localidad = $_POST['localidad'];   
+    $localidad = $_POST['localidad'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     //MongoDB
     $documento = [
@@ -31,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         'mail'=> $mail,
         'direccion'=> $direccion,
         'localidad'=> $localidad,
+        'password'=> $password,
     ];
     
     $resultado = $collection->insertOne($documento);
@@ -42,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 
     //PhpMyAdmin
-    $sql = "INSERT INTO datos (nombre, apellido, telefono, mail, direccion, localidad) 
-                    VALUES ('$nombre','$apellido', '$telefono', '$mail', '$direccion', '$localidad')";
+    $sql = "INSERT INTO datos (nombre, apellido, telefono, mail, direccion, localidad, password) 
+                    VALUES ('$nombre','$apellido', '$telefono', '$mail', '$direccion', '$localidad', '$password')";
     $ejecutar = mysqli_query($conexion, $sql);
 
     if(!$ejecutar){
