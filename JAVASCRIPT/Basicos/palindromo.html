@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align:center;
+            margin:50px;
+        }
+    </style>
+    <script>
+        function esPalindromo(texto){
+            //Convertir el texto a minusculas
+            //
+            var textoLimpio = texto.toLowerCase();
+            return textoLimpio===textoLimpio.split('').reverse().join('');
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var textoUsuario= prompt("Ingrese un texto: ");
+        //strim--> quitar espacios del principio y del final
+        if(textoUsuario.trim()==''){
+            textoUsuario=prompt("Por favor, ingrese de nuevo un texto válido: ")
+        }else{
+            var esPalin = esPalindromo(textoUsuario);
+            var mensaje = esPalin ? '!Es un palindromo' : 'No es un palindromo';
+            document.write(`${mensaje}`);
+        }
+        
+
+    </script>
+</body>
+</html>

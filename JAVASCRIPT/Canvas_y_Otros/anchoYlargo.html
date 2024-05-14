@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Obtén el ancho y el alto de la ventana del navegador, así como la URL actual. 
+        Muestra la información por la consola*/
+        //innerWidth -> Ancho de mi ventana en pixeles
+        //innerHeight -> Largo de la ventana
+        //href -> Propiedad del objeto location que me proporciona la URL actual
+
+        //Obtener el ancho y el alto
+        let anchoVentana = window.innerWidth;
+        let altoVentana = window.innerHeight;
+
+        //Obtener la URL actual
+        let urlActual = window.location.href;
+        //Mostramos la informacion por consola:
+        console.log("Ancho de la ventana " + anchoVentana + "px");
+        console.log("Altura de la ventana " + altoVentana + "px");
+        console.log("URL actual: "+ urlActual);
+        
+    </script>
+</body>
+</html>

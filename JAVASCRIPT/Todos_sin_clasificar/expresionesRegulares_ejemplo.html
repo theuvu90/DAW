@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Encontrar todos los números de teléfono del siguiente texto
+        var texto = "Mi número es 123-456-789 y el de mi amigo es 987-654-321";
+        //Creamos una expresión regular para buscar el formato
+        var regex = /\d{3}-\d{3}-\d{3}/g;
+
+        //match -> sirve para encontrar las coincidencias en un texto con una expresión regular
+        var resultado = texto.match(regex);
+        console.log(resultado);
+
+    </script>
+</body>
+</html>

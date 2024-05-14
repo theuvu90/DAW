@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        test ==> devuelve true en caso de que la expresión regular
+        se cumpla y false en caso contrario
+        //
+        . (punto) ->coincide con cualquier carácter
+        */
+       var regex = /a.b/;
+       //console.log(regex.test("acb"));
+       //console.log(regex.test("cda"));
+       console.log(regex.test("hkjalb"));
+
+       /*
+       ^ ==> coincide con el texto con el inicio de una cadena
+       */
+      var regex = /^abc/;
+      console.log(regex.test("abc123")); //true
+      console.log(regex.test("123abc")); //false
+
+      /*
+      $ -> coincide con el final de una cadena
+      */
+      var regex = /abc$/;
+      //console.log(regex.test("123abc")) -> true
+
+      var regex = /[ueoai]/;  //coincide con cualquier carácter dentro de los corchetes
+      console.log(regex.test("hello")); //true
+      console.log(regex.test("xyz")); //false
+
+      var regex = /go*d/; //coincide con 0 o más repeticiones del carácter anterior
+      console.log(regex.test("goooood")); //true
+
+      
+
+    </script>
+</body>
+</html>

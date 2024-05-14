@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Declaro un conjunto de tipo set donde vaya introduciendo los elementos del usuario
+        var setPalabras = new Set();
+        var arrayPalabras = [];
+        //Hacemos una primera lectura e introducimos palabras en setPalabras
+        var palabra = prompt("Esciba una palabra (o nada si desea acabar)");
+        while(palabra != null && palabra != ""){
+            setPalabras.add(palabra);
+            palabra = prompt("Escriba una palabra (o nada si desea acabar)");
+        }
+        //Convierto el set en un array --> [...setConjunto] -->pasa a ser un array
+        arrayPalabras = [...setPalabras];
+        //Ordenamos -->sort, localeCompare(inverso)
+        /*sort
+        sort(funciona(a,b)) ==>
+        f devuelve un número < 0 si a < b
+        f devuelve = 0 si a = b
+        f devuelve un número > 0 si a > b
+        */
+       arrayPalabras.sort((a,b)=>(-a.localeCompare(b,"es")));       
+       //Mostramos por pantalla
+       //recorremos el array usando forEach
+       //forEach(function(elemento, indice))
+       arrayPalabras.forEach(function(pal){
+        document.write(`<p>${pal}</p>`);
+       })
+    </script>
+</body>
+</html>

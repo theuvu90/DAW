@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#imagen{
+			background-color: black;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-size: cover;
+			background-position: center;
+		}
+		h1{
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="imagen">
+		<h1>Pulsa <kbd>Alt + F12</kbd> para cambiar la imagen de fondo</h1>
+	</div>
+	<script>
+		//keyup => este evento se produce cuando el usuario suelta la tecla
+		document.body.addEventListener("keyup", function(ev){
+			//altKey -> propiedad que devuelve true si la tecla altKey se pulsa
+			//key -> Devuelve el texto que tiene la tecla pulsado
+			if(ev.altKey && ev.key=="F12"){
+				let capa = document.getElementById("imagen");
+				capa.style.backgroundImage = "url('https:/sourse.unsplash.com/random')"
+			}
+		}
+		)
+	</script>
+</body>
+</html>

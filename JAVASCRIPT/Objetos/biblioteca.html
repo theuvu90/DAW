@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creación de un constructor 'Libro'
+        function Libro(titulo,autor,añoPublicacion,genero){
+            this.titulo=titulo;
+            this.autor=autor;
+            this.añoPublicacion=añoPublicacion;
+            this.genero=genero;
+        }
+        //Funcion para imprimir informacion
+        function imprimirInformacionLibro(libro){
+            console.log(`Título ${libro.titulo}`);
+            console.log(`Autor: ${libro.autor}`);
+            console.log(`Año publi: ${libro.añoPublicacion}`);
+            console.log(`Genero: ${libro.genero}`);
+        }
+        //Función agregar un libro a la biblioteca
+        function agregarLibro(biblioteca, libro){
+            biblioteca.push(libro);
+        }
+        //Función para buscar libros por autor
+        function buscarLibrosPorAutor(biblioteca, autor){
+            return biblioteca.filter(libro => libro.autor === autor);
+        }
+
+        //EJEMPLO DE USO
+        var biblioteca = [];
+        var libro1 = new Libro("El señor de los anillos","J.R.R Tokien",1954,"Fantasía");
+        var libro2 = new Libro("Cien años de soledad", "Gabriel",1967,"Realismo mágico");
+        agregarLibro(biblioteca,libro1);
+        agregarLibro(biblioteca,libro2);
+
+        console.log("Información libro 1");
+        imprimirInformacionLibro(libro1);
+        console.log("Información Libro 2")
+        imprimirInformacionLibro(libro2);
+
+        console.log("\nLibros de Gabriel: ")
+        var librosDeGabriel= buscarLibrosPorAutor(biblioteca, "Gabriel");
+        librosDeGabriel.forEach(libro => imprimirInformacionLibro(libro));
+    </script>
+</body>
+</html>

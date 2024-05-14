@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Seleciona tu opcion</h2>
+    <button id="piedra">Piedra</button>
+    <button id="papel">Papel</button>
+    <button id="tijeras">Tijeras</button>
+    <p id="resultado"></p>
+
+    <script>
+        //jugar ->decide quien gana, dandole como argumento la elección del usuario
+        document.getElementById("piedra").addEventListener("click", function(){
+            jugar("piedra");
+        });
+        document.getElementById("papel").addEventListener("click", function(){
+            jugar("papel");
+        });
+        document.getElementById("tijeras").addEventListener("click", function(){
+            jugar("tijeras");
+        });
+
+        function jugar(opcionUsuario){
+            var opciones = ["piedra", "papel", "tijeras"];
+            var opcionComputadora = opciones[Math.floor(Math.random()*opciones.length)];
+            var resultado = "";
+            if(opcionUsuario === opcionComputadora){
+                resultado = "Empate";
+            }else if(
+                (opcionUsuario === "piedra" && opcionComputadora === "tijeras") ||
+                (opcionUsuario === "papel" && opcionComputadora === "piedra") ||
+                (opcionUsuario === "tijeras" && opcionComputadora === "papel")
+            ){
+                resultado = "Ganaste!!"
+            }else{
+                resultado = "Perdiste :(";
+            }
+            document.getElementById("resultado").innerText = "El ordenador eligió: " + opcionComputadora +". "+resultado;
+
+        }
+    </script>
+</body>
+</html>

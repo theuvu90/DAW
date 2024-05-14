@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.ventana emergente
+        let aceptaNotificaciones = window.confirm("Desea recibir notificaciones?");
+        //2.Crea un temporizador para redireccionar despues de 3 segundos
+        window.setTimeout(function(){
+            window.location.href = "https://google.com";
+        }, 3000);
+        //3.Informacion sobre el navegador
+        let userAgent = window.navigator.userAgent;
+        console.log("Agente de usuario del navegador: " + userAgent);
+        //4.Obtener la altura del documento
+        let alturaDocumento = window.document.body.scrollHeight;
+        console.log("Altura total del documento en pixeles: " + alturaDocumento);
+        //5.Pedir nombre del usuario
+        let nombreUsuario = window.prompt("Hola, cual es tu nombre?");
+        
+
+    </script>
+</body>
+</html>

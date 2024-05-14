@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Crea un juego de carreras de tortugas en el que el jugador puede apostar por una de las tres tortugas. 
+        Las tortugas avanzarán aleatoriamente en cada turno. El jugador debe elegir una tortuga y hacer una apuesta.
+         Cuando una tortuga llegue a la línea de meta, el juego terminará, y se determinará si el jugador ganó su apuesta.
+        Se ganará cuando la tortuga avance 20 posiciones
+         */
+
+         //Variables para representar el avanza de cada tortuga
+         let tortuga1 = 0;
+         let tortuga2 = 0;
+         let tortuga3 = 0;
+
+         const apuesta = prompt("¡Biembenido a la carrera de Torgugas! ¿Qué tortuga crees que ganará?" +
+         "(tortuga 1, tortuga2 o tortuga 3)");
+
+        let ganador = null;     //null--> false
+
+        while( !ganador){  // ! false --->true
+            //Generar un número aleatorio entre 1 y 5 para el avance de cada tortuga
+            //Math.floor --> Se queda con la parte entera de un número (4,16 --> 4)
+            var avanceTortuga1 = Math.floor(Math.random()*5)+1;
+            var avanceTortuga2 = Math.floor(Math.random()*5)+1;
+            var avanceTortuga3 = Math.floor(Math.random()*5)+1;
+
+            tortuga1 += avanceTortuga1;
+            tortuga2 += avanceTortuga2;
+            tortuga3 += avanceTortuga3;
+
+        if(tortuga1>= 20 || tortuga2>=20 || tortuga3>=20){
+            if(tortuga1>=20){
+                ganador ="tortuga1";
+            }else if(tortuga2>=20){
+                ganador = "tortuga2";
+            }else{
+                ganador ="tortuga3";
+            }
+        }
+        }
+
+        if (ganador == apuesta ){
+            alert (`Muy bien! Enhorabuena, cruzó la línea la tortuga: ${ganador}`);
+        }else {
+            alert(`Perdiste! La tortuga ganadora es: ${ganador}`);
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

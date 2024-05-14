@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //createElement
+        var nuevoDiv = document.createElement("div");
+        //createTextNode ->un nodo de texto
+        var textoHola = document.createTextNode("Hola, mundo!");
+
+        nuevoDiv.style.backgroundColor = "red";
+        nuevoDiv.style.padding = "10px";
+
+        //appendChild
+        nuevoDiv.appendChild(textoHola);
+        document.body.appendChild(nuevoDiv);
+        //removeChild
+        window.setTimeout(function(){
+            document.body.removeChild(nuevoDiv);
+        }, 5000);
+
+    </script>
+</body>
+</html>

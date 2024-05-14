@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Función que indica si un número es par o impar
+        function parOimpar(numero){
+            //if(numero%2===0)return "par" else return "impar"
+            return numero % 2 === 0 ? "par":"impar";
+        }
+        //Función que genera "cantidad" de números aleatorios
+        function generarNumerosAleatorios(cantidad){
+            var numeros=[];
+            for(let i=0;i<cantidad;i++){
+                var numeroAleatorio = Math.floor(Math.random()*10000)+1;
+                //push
+                numeros.push(numeroAleatorio);
+            }
+            return numeros;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var cantNum = 500;
+        var numerosAleatorios = generarNumerosAleatorios(cantNum);
+        for(let i=0;i<cantNum;i++){
+            var numero = numerosAleatorios[i];
+            var resultado = parOimpar(numero);
+            document.write(`<p>${numero} - ${resultado}`);
+        }
+    </script>
+</body>
+</html>

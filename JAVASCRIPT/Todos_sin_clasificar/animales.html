@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Definición del objeto animal
+        function Animal(nombre, tipo, edad, sonido){
+            this.nombre = nombre;
+            this.tipo = tipo;
+            this.edad = edad;
+            this.sonido = sonido;
+        }
+        //Creación de una instancia de Animal
+        let leon = new Animal("León", "Mamífero", 38, "Rugido");
+
+        // Mostrar información del animal
+        console.log("Información de animal:");
+        console.log("Nombre:" + leon.nombre);
+        console.log("Tipo:" +leon.tipo);
+        console.log("Edad:" + leon.edad + " meses");
+        console.log("Sonido:" + leon.sonido);
+
+        //Añadir el método hacerSonido al prototipo de Animal
+        Animal.prototype.hacerSonido = function(){
+            console.log(this.nombre + " hacer el sonido " + this.sonido);
+        }
+        //Añadir la propiedad color al prototipo
+        Animal.prototype.color = "Desconocido";
+        //Asignamos un color al león
+        leon.color = "Amarillo con melena";
+        //Mostrar el color del animal:
+        console.log("Color del león: " + leon.color);
+        //Llamar el método hacerSonido para el león
+        leon.hacerSonido()
+    </script>
+</body>
+</html>

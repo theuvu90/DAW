@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#capa{
+			position: fixed;
+			width: 50%;
+			height: 50%;
+			left: 25%;
+			top: 25%;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="capa"></div>
+	<script>
+		var capa = document.getElementById("capa");
+
+		//El ratón entra en la capa --> mouseenter
+		capa.addEventListener("mouseenter", (ev)=>{
+		capa.style.backgroundColor = "green";
+		})
+
+		//El ratón sale de la capa -> mouseleave 
+		capa.addEventListener("mouseleave", (ev)=>{
+			capa.style.backgroundColor = "transparent";
+		})
+
+		//Se aprieta el botón principal --> mousedown
+		//button == 0, botón principal pulsado
+		//button == 2, botón secundario pulsado
+		capa.addEventListener("mousedown", (ev)=>{
+		if(ev.button == 0)
+			capa.style.backgroundColor="red";
+		else if(ev.button == 2)
+			capa.style.backgroundColor = "blue";
+		})
+
+		//Se suelta el botón sobre la capa -> mouseup
+		capa.addEventListener("mouseup", (ev)=>{
+			capa.style.backgroundColor = "green";
+		})
+
+		//Anulamos el menú contextual que se provoca por defecto.contextmenu
+		//preventDefault -> no se produce el comportamiento por defecto
+		capa.addEventListener("contextmenu", (ev)=>{
+			ev.preventDefault();
+		})
+	</script>
+</body>
+</html>

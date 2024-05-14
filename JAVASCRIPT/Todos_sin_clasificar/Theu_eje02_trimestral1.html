@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 trimestral 1</title>
+    <script>
+        
+        //Crear función para saber si un texto es un palíndromo
+        function esPalindromo(texto){
+            //Eliminar los espacios del texto
+            texto = texto.split(" ").join("")
+            //Cambiar todas las letras a mayusculas
+            texto = texto.toUpperCase();
+            // Si encuentra una letra en posición [i] que no es igual que letra en posicion [texto.length-1-i] --> return false
+            for(let i=0; i<texto.length; i++){
+                if(texto[i] != texto[texto.length-1-i]) return false;
+                break;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let texto = prompt("Escriba el texto que desea comprobar si es un palíndromo: ");        
+        document.write(esPalindromo(texto));
+    </script>
+</body>
+</html>

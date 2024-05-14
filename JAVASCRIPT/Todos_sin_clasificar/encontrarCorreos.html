@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //Encontrar todos los correos del siguiente texto
+const texto = "Mis correos son contacto@example.com y otrocorreo@gmail.com.";
+ 
+ // Creamos una expresión regular para buscar el formato de correos electrónicos.
+ const regex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+  
+ // Usamos el método match para encontrar todas las coincidencias en el texto.
+ const resultados = texto.match(regex);
+  
+ // Imprimimos los resultados.
+ console.log(resultados);
+  
+    </script>
+</body>
+</html>

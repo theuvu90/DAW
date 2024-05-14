@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 Trimestral 1</title>
+    <script>
+        //Función que genera "cantidad" de números aleatorios del 1 al 50
+        function generarNumerosAleatorios(cantidad){
+            var numeros=[];
+            for(let i=0;i<cantidad;i++){
+                var numeroAleatorio = Math.floor(Math.random()*50)+1;
+                //push
+                numeros.push(numeroAleatorio);
+            }
+            return numeros;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        //Genera un array con 20 números aleatorios del 1 al 50
+        var cantNum = 20;
+        var numeros = generarNumerosAleatorios(cantNum);
+        //Imprimir array de numeros
+        document.write(numeros);
+        document.write("<br><br>")
+        //Imprimir tantos asteriscos como indique en el número de cada elemento
+        for(let i=0; i<cantNum;i++){            
+            var n = numeros[i];             
+            for(let j=1; j<=n; j++){                
+                 document.write("* ");                 
+            }
+            document.write("<br>");                       
+        }
+    </script>
+    
+</body>
+</html>

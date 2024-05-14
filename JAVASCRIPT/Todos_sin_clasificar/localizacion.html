@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización de usuarios</title>
+</head>
+<body>
+    <h1>Geolocalización: </h1>
+    <div>
+    <p id="status"> Obteniendo ubicación...</p>
+    <p id ="latitude"> Latitud: </p>
+    <p id="longitude">Longitud: </p>
+</div>
+</body>
+<script>
+    if("geolocation" in navigator){
+
+        //En caso de que el navegador sea compatible
+        //getCurrentPosition 
+        navigator.geolocation.getCurrentPosition((position)=>{
+            //La ubicación se obtuvo con éxito
+            document.getElementById("status").innerText="Ubicación obtenida correctamente";
+            document.getElementById("latitude").innerText=`Latitud: ${position.coords.latitude}`;
+            document.getElementById("longitude").innerText = `Longitud: ${position.coords.longitude}`;
+        })
+
+    }else{
+        document.getElementById("status".innerText="La geolocalización no es compatible");
+    }
+</script>
+</html>

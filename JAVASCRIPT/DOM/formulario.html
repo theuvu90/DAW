@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+        }
+        #result{
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Adivinar la contraseña</h1>
+    <form id="passwordForm">
+        <label for="password">Ingrega la contraseña</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Adivinar</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        //DOMContentLoaded -> cuando el DOM esté cargado
+        document.addEventListener("DOMContentLoaded", function(){
+            //obtener el form
+            const form = document.getElementById("passwordForm");
+            //Obtener el campo de contraseña
+            const passwordInput = document.getElementById("password");
+            //Obtener el campo para mostrar el resultado
+            const resultDiv = document.getElementById("result");
+            //Definir la contraseña correcta
+            const correctPassword = 'secreto';
+            //submit ->se realiza en el momento que se envía el formulario
+            form.addEventListener('submit', function(event){
+                event.preventDefault();
+                const guess = passwordInput.value.trim();
+                if(guess === correctPassword){
+                    resultDiv.textContent = "Felicidades! La has adivinado";
+                    resultDiv.style.color = "green";
+                    passwordInput.disable = true;
+                }else{
+                    resultDiv.textContent = "Contraseña incorrecta. Inténtalo de nuevo";
+                    resultDiv.style.color = "red";
+                    passwordInput.value = "";
+                }
+            })
+        })
+    </script>
+</body>
+</html>

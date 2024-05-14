@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .task-list{
+            list-style-type: none;
+            padding: 0;
+        }
+        .completed{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <ul id="taskList" class="task-list">
+        <li>Tarea 1</li>
+        <li>Tarea 2</li>
+        <li>Tarea 3</li>
+        <li>Tarea 4</li>
+    </ul>
+    <div id="timer">Tiempo transcurrido: <span id=time>00:00</span></div>
+    <script>
+        //Declaración de variables globales
+        let timer;
+        let totalSeconds=0;
+        let tasks = document.querySelectorAll("#taskList li");
+
+        //Función para iniciar el temporizador: startTimer
+        function startTimer(){
+            timer = setInterval(updateTimer, 1000)
+        };
+
+        //Función para actualizar el temporizador 
+        function updateTimer(){
+            totalSeconds++;
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds %60;
+            const formattedTime = padNumber(minutes) + " : "+ padNumber(seconds);
+            document.getElementById("time").innerText=formattedTime;
+        }
+        //Función para agregar ceros a la izquierda cuando los números sean menores de 10 10:05
+        function padNumber(num){
+            return (num < 10? "0" : "")+num;
+        }
+        //Función para mostrar una notificación después de 5 segundos
+        function showNotification(){
+            alert("¡Han pasado 5 segundos");
+            clearInterval(timer);
+            totalSeconds = 0;
+            document.getElementById("time").innerText="00:00";
+            startTimer();
+        }
+
+        //Función para marcar una tarea como completada
+        function taskCompleted(event){
+            let task = event.target;
+            if(!task.classList.contains("completed")){
+                task.classList.add("completed");
+            }else{
+                task.classList.remove("completed");
+            }
+        }
+        document.addEventListener("DOMContentLoaded", 
+        function(){
+            startTimer();
+            setTimeout(showNotification, 5000);
+            for(let i = 1; i<tasks.length; i++){
+                tasks[i].addEventListener("click", taskCompleted);
+            }
+        });
+    </script>
+    
+</body>
+</html>

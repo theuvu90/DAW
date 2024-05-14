@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <p>Velocidad <span>0</span></p>
+    <script>
+        //Velocidades de la que no se puede ni subir ni bajar
+        const topeSuperior = 120;
+        const topeInferior = 0;
+
+        let velocidad = document.querySelector("span");
+
+        //Evento de teclado: keydown
+        document.body.addEventListener("keydown", (ev)=>{
+            let v = Number(velocidad.textContent);
+            if(ev.key == "ArrowUp"){
+                if(v < topeSuperior){
+                    velocidad.textContent = v + 1;
+                }
+                else if(ev.key == "ArrowDown"){
+                    if(v > topeInferior){
+                        velocidad.textContent = v - 1;
+                    }
+                }
+            }
+        })
+    </script>    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid black;
+            padding: 1em;
+            position: fixed;
+            top: 20px;
+            width: 200px;
+            height: 100px;
+        }
+        #capa1{
+            left: 50px;
+        }
+        #capa2{
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="capa1" draggable="true" style="background-color: yellow;">
+        Soy arrastrable
+    </div>
+    <div id="capa2">
+        Soy el destino
+    </div>
+    <script>
+        let capa1 = document.getElementById("capa1");
+        let capa2 = document.getElementById("capa2");
+        //drag ->una vez se inicia el arrastre
+        capa1.addEventListener("drag", (ev)=>{
+            capa1.style.opacity = 0.5;
+        })
+        //dragend ->cuando el usuario ha terminado de arrastrar
+        capa1.addEventListener("dragend", (ev)=>{
+            capa1.style.opacity = 1;
+            capa1.style.backgroundColor = "transparent";
+        })
+
+        //dragenter -> cuando hay un elemento arrastrable que entra en el elemento destino
+        capa2.addEventListener("dragenter", (ev)=>{
+            capa2.style.backgroundColor = "red";
+        })
+
+        //dragleave ->cuando el elemento sale de la capa destino
+        capa2.addEventListener("dragleave",(ev)=>{
+            capa2.style.backgroundColor = "transparent";
+        })
+
+        //dragover -> cada vez que se continua arrastrado el elemento origen sobre el destino
+        capa2.addEventListener("dragover", (ev)=>{
+            ev.preventDefault();
+        })
+
+        //drop ->cuando el elemento de origen se suelta dentro del destino
+        capa2.addEventListener("drop",(ev)=>{
+            document.body.removeChild(capa1);
+            capa2.textContent = "Lo has logrado!";
+            capa2.style.backgroundColor = "yellow";
+        })
+
+    </script>
+</body>
+</html>

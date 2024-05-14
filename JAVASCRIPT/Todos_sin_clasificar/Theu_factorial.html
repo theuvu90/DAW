@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Factorial</title>
+    <style>
+        body {
+            font-size: 32px;
+            font-weight: 500px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        do{
+            n=prompt("Escribe el número de asteriscos que deseas (debe ser entero positivo)")
+        }while(isNaN(Number(n))|| n<=0);
+
+        var factorial=1;
+
+        for(let i=1; i<=n; i++){
+            factorial *= i;
+        }
+        document.write(`El factorial es ${n}! = ${factorial}`);
+
+    </script>
+</body>
+</html>

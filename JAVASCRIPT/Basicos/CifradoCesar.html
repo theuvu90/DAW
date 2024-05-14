@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado Cesar</title>
+</head>
+<body>
+    <script>
+        let texto = prompt("Escriba el texto que desea cifrar: ");
+        let clave;
+        //Validación de que es una clave válida
+        do{
+            clave=prompt("Escriba la clave (un número entero: )");
+            if(isNaN(Numbrer(clave))){
+                alert("No has escrito un número");
+            }
+        }while(isNaN(Number(clave)));
+
+        //Bucle for...in
+        clave = parseInt(clave);
+        for(let letra in texto){
+            //charCodeAt => Devuelve el unicode del carácter en el índice especificado
+            let cifra = texto.charCodeAt(letra) + clave;
+            //fromCharCode => Convertir valores unicode en caracteres
+            document.write(String.fromCharCode(cifra));
+        }
+
+    </script>
+</body>
+</html>

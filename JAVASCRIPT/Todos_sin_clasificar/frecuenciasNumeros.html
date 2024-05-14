@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Función que genera "cantidad" de números aleatorios
+        function generarNumerosAleatorios(cantidad){
+            var numeros=[];
+            for(let i=0;i<cantidad;i++){
+                var numeroAleatorio = Math.floor(Math.random()*10)+1;
+                //push
+                numeros.push(numeroAleatorio);
+            }
+            return numeros;
+        }
+        
+        //Función que calcula la frecuencia de x
+        function frecuencias(x){
+            var frecuencia = 0;            
+            var cantNum = 10000;
+            var numerosAleatorios = generarNumerosAleatorios(cantNum);
+            for(let i=0; i<cantNum; i++){
+                var numero = numerosAleatorios[i];
+                if(numero==x){
+                    frecuencia++;
+                }
+            }
+            return frecuencia;
+        }        
+    </script>
+</head>
+<body>
+    <script>
+        // Imprimir frecuencias de 1 a 10
+        for(let i=1; i<=10; i++){            
+            document.write(`<p>Número ${i}: ${frecuencias(i)}</p><br>`)
+        }     
+        
+    </script>
+    
+</body>
+</html>

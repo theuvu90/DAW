@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="miLista">
+        <li>Manzana</li>
+        <li>Naranja</li>
+        <li>Uva</li>
+        <li>Pera</li>
+        <li>Mango</li>
+        <li>Plátano</li>
+        <li>Fresa</li>
+        <li>Kiwi</li>
+        <li>Cereza</li>
+        <li>Arándanos</li>
+        <li>Sandía</li>
+        <li>Piña</li>
+    </ul>    
+</body>
+<script>
+    //obtener la lista y los elementos de la lista
+    var lista = document.getElementById("miLista");
+    var elementosLista = lista.getElementsByTagName("li");
+    //Preguntar al usuario despues de 3 segundos
+    function preguntarOrdenAlfabetico(){
+        setTimeout(function(){
+            var respuesta = confirm("Quieres que la lista aparezca ordenada alfabeticamente?");
+            if(respuesta){
+                ordenarListaAlfabeticamente();
+            }
+        }, 3000);
+    }
+    function ordenarListaAlfabeticamente(){
+        //Convertir la coleccion de elementos en un array
+        var arrayElementos = Array.from(elementosLista);
+        //Ordenar el array alfabéticamente
+        //textContent -> devuelve el texto de un elemento
+        arrayElementos.sort(function(a,b){
+            return a.textContent.localeCompare(b.textContent);
+        });
+        //eliminar los elementos actuales de la lista
+        while(lista.firstChild){
+            lista.removeChild(lista.firstChild);
+        }
+        //Agregar los elementos ordenados de nuevo a la lista
+        arrayElementos.forEach(function(elemento){
+            lista.appendChild(elemento);
+        });       
+    }
+    preguntarOrdenAlfabetico();
+</script>
+</html>

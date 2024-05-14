@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let texto = prompt("Escriba el texto que desea cifrar: ");
+        let clave = prompt("Escriba la clave (una serie de números)");
+        let i=0; // i se encarga de recorrer las cifras de la clave
+        for(let letra in texto){
+            //charAt(i) devuelve el valor del string indicado en el índice i
+            let cifra = texto.charCodeAt(letra) + Number(clave.charAt(i));
+            document.write(String.fromCharCode(cifra));
+            i++;
+            if(i==clave.length) i=0;
+        }
+    </script>
+</body>
+</html>

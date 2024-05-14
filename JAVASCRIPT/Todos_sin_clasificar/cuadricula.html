@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="miCanvas" width="400" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById('miCanvas');
+
+        //El contexto es el objeto que permite dibujar en el lienzo
+        var ctx = canvas.getContext('2d');
+
+        //Configuramos el estilo de linea --> strokeStyle , lineWidth
+        ctx.strokeStyle='black';
+        ctx.lineWidth = 1;
+
+        //Dibujamos las líneas horizontales 
+        for(var y = 0; y< canvas.height; y+=50){
+            //beginPath --> Iniciar un nuevo camino
+            ctx.beginPath();
+            //Movemos el lápiz l punto inicial , moveTo: mueve el cursor a la coordenada concreta
+            ctx.moveTo(0, y);
+
+            //Dibuja una línea desde donde está el cursor hasta la coordenada indicada
+            // lineTo --> dibujar una línea desde donde está el cursor a la coordenada
+            ctx.lineTo(canvas.width, y);
+            ctx.stroke();
+        }
+
+        //Dibujar líneas verticales
+        for (var x=0; x < canvas.width; x+=50){
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, canvas.height);
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>
