@@ -1,0 +1,18 @@
+table {
+    width: 100%;   
+}
+.container {
+    width: 50%;
+    padding: 10px;
+    border: 4px dashed blue; 
+    border-radius: 15px;
+    background-color: greenyellow;    
+}
+caption{   
+   font-weight: bold;
+   color: red;
+}
+button{
+    background-color: blueviolet;
+    color: white;
+}

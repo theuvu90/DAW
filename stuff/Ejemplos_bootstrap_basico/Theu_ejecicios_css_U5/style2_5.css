@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+}
+.container {
+    width: 50%;
+    padding: 20px;
+    border: 10px double rgb(215, 135, 222);   
+    background-color: rgb(35, 241, 173); 
+}
+caption{   
+   font-weight: bold;
+   font-size: larger;
+   color: blue;
+}
+button{
+    background-color: blue;
+    color: white;
+}
